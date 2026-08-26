@@ -1,0 +1,38 @@
+<h2>X OLED Collapse — Black-Out Chrome for X / Twitter</h2>
+
+<p><strong>X OLED Collapse</strong> folds away everything around the timeline. The left navigation rail, the right-hand trends column, the sticky <em>For you / Following</em> bar, the "What's happening?" composer and the floating corner buttons all collapse to pure <code>#000</code>, leaving the posts centred on a black screen. On an OLED panel those pixels are genuinely off — no glowing sidebar sitting in the same place for hours, no static UI to burn in.</p>
+
+<p>Nothing is deleted. Every collapsed panel is parked just off-screen and slides back the instant you push the pointer into its edge, so navigation, search, trends and posting all stay one flick away.</p>
+
+<h3>✨ Features</h3>
+<ul>
+  <li><strong>Collapses the whole frame</strong> — left nav, right column, tab bar, inline composer and the floating Grok / chat / X Reels buttons, each toggleable on its own.</li>
+  <li><strong>Hover to peek</strong> — the left and right panels slide in from their own edge, the tab bar and composer drop down from the top, and each floating corner reveals from the corner it actually sits in.</li>
+  <li><strong>Centred timeline</strong> — with the columns gone the feed is measured and centred in the window instead of hugging the left edge.</li>
+  <li><strong>Wider posts</strong> — cycle the timeline through 900 / 1050 / 1200 / 600 / 750 px. Media scales with the column, so images, videos and quote cards stay correct.</li>
+  <li><strong>True black</strong> — backgrounds forced to <code>#000</code>, and X's grey 1px hairlines (post separators, column edges, media frames, card outlines) recoloured black rather than removed, so no row changes height.</li>
+  <li><strong>Alt + Q</strong> — hide everything, or bring it all back.</li>
+  <li><strong>Remembers everything</strong> — every toggle and the timeline width persist across reloads and sessions.</li>
+</ul>
+
+<h3>🎛️ Controls</h3>
+<ul>
+  <li><strong>Tampermonkey tray menu</strong> (the extension icon while on x.com) → a switch for each piece, the width cycle, and <em>Show everything again</em> as a panic button.</li>
+  <li><strong>Alt + Q</strong> → hide everything / show everything.</li>
+  <li><strong>Left or right screen edge</strong> → the nav rail or the trends column slides in.</li>
+  <li><strong>Top edge</strong> → the tab bar and composer come back.</li>
+  <li><strong>Top-right / bottom-right corner</strong> → X Reels, and the Grok / chat buttons.</li>
+</ul>
+
+<h3>🎨 Defaults</h3>
+<p>Out of the box everything is hidden, backgrounds and outlines are pure black, the timeline is centred at <strong>900px</strong>, and hover peek is on. Any of it can be switched off individually from the tray menu — including peek itself, if you would rather the chrome stayed gone for good.</p>
+
+<h3>ℹ️ Notes</h3>
+<ul>
+  <li>Works on <code>x.com</code> and <code>twitter.com</code>. Requires Tampermonkey or Violentmonkey.</li>
+  <li>Panels are collapsed, never removed from the page, so X's own keyboard shortcuts, navigation and the post composer keep working normally.</li>
+  <li>The reply box on a post page is deliberately left alone — only the composer on the home timeline is hidden.</li>
+  <li>Elements X gives no stable selector for (the sticky header, the composer, the floating buttons) are found by shape rather than by class name, and re-checked on every DOM change, so they survive X's re-renders and page navigation.</li>
+</ul>
+
+<p><em>ISC licensed. Made by Kristijan1001.</em></p>
