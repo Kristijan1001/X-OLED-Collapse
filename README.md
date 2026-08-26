@@ -1,5 +1,7 @@
 # X OLED Collapse
 
+<img src="icon.svg" width="72" align="right" alt="">
+
 A single-file userscript that folds away everything around X/Twitter's timeline.
 
 The left nav rail, the right-hand trends column, the sticky *For you / Following* bar, the

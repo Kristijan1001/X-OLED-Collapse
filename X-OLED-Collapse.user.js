@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         X OLED Collapse
 // @namespace    x-oled-collapse
-// @version      1.10.0
+// @version      1.10.1
 // @description  Collapse X/Twitter's chrome for OLED: left nav, right column, tab bar, composer and the floating corner buttons all fold away to pure black. Centred, widenable timeline, hover any edge to peek a panel back.
 // @author       Kristijan1001
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=x.com
+// @icon         data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij4gPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMwMDAiLz4gPHJlY3QgeD0iMC43NSIgeT0iMC43NSIgd2lkdGg9IjYyLjUiIGhlaWdodD0iNjIuNSIgcng9IjEzLjI1IiBmaWxsPSJub25lIiBzdHJva2U9IiMxYjFiMWIiIHN0cm9rZS13aWR0aD0iMS41Ii8+IDxyZWN0IHg9IjI1IiB5PSIxMyIgd2lkdGg9IjE0IiBoZWlnaHQ9IjM4IiByeD0iMyIgZmlsbD0iI2Y1ZjVmNSIvPiA8cGF0aCBkPSJNMTEgMjMgTDE5IDMyIEwxMSA0MSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWQ5YmYwIiBzdHJva2Utd2lkdGg9IjQuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+IDxwYXRoIGQ9Ik01MyAyMyBMNDUgMzIgTDUzIDQxIiBmaWxsPSJub25lIiBzdHJva2U9IiMxZDliZjAiIHN0cm9rZS13aWR0aD0iNC41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4gPC9zdmc+
 // @homepageURL  https://github.com/Kristijan1001/X-OLED-Collapse
 // @supportURL   https://github.com/Kristijan1001/X-OLED-Collapse/issues
 // @downloadURL  https://raw.githubusercontent.com/Kristijan1001/X-OLED-Collapse/main/X-OLED-Collapse.user.js
