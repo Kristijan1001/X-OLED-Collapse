@@ -48,7 +48,7 @@ To rebind the shortcut, change `HOTKEY` near the bottom of the script to any
 | Black outlines (grey 1px borders to `#000`) | on |
 | Centred timeline | on |
 | Hover peek | on |
-| Timeline width — cycles 900 / 1050 / 1200 / 600 / 750 | 900 (X's own is 600) |
+| Timeline width — cycles 810 / 900 / 1050 / 1200 / 600 / 750 | 810 (X's own is 600) |
 
 ## How it works
 

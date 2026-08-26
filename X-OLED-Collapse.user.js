@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         X OLED Collapse
 // @namespace    x-oled-collapse
-// @version      1.9.2
+// @version      1.10.0
 // @description  Collapse X/Twitter's chrome for OLED: left nav, right column, tab bar, composer and the floating corner buttons all fold away to pure black. Centred, widenable timeline, hover any edge to peek a panel back.
 // @author       Kristijan1001
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=x.com
@@ -52,12 +52,14 @@
     const NAV_W = 275;   // px, width the left rail is restored to while peeking
     const SIDE_W = 350;  // px, ditto for the right column
 
-    // Timeline width. 600 is X's own value; 900 is the default here. The menu
-    // cycles through the list.
-    const WIDTHS = [900, 1050, 1200, 600, 750];
-    let width = 900;
+    // Timeline width. 600 is X's own value; 810 is the default here. The menu
+    // cycles through the list. The stored key is versioned so changing the
+    // default actually takes effect for anyone carrying an older choice.
+    const WIDTHS = [810, 900, 1050, 1200, 600, 750];
+    const WIDTH_KEY = 'width2';
+    let width = 810;
     if (typeof GM_getValue === 'function') {
-        const stored = parseInt(GM_getValue('width', 900), 10);
+        const stored = parseInt(GM_getValue(WIDTH_KEY, 810), 10);
         if (WIDTHS.includes(stored)) width = stored;
     }
 
@@ -274,7 +276,7 @@
     function cycleWidth() {
         const i = WIDTHS.indexOf(width);
         width = WIDTHS[(i + 1) % WIDTHS.length];
-        if (typeof GM_setValue === 'function') GM_setValue('width', width);
+        if (typeof GM_setValue === 'function') GM_setValue(WIDTH_KEY, width);
         applyWidth();
         flash('timeline width: ' + width + 'px' + (width === 600 ? ' (X default)' : ''));
     }
