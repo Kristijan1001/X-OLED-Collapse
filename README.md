@@ -28,15 +28,16 @@ persists via `GM_setValue`.
 | | |
 |---|---|
 | **Alt + Q** | Hide everything / show everything |
+| **Alt + W** | Step the timeline width (wraps around) |
 | **Left or right screen edge** | Nav rail / trends column slides in |
 | **Top edge** | Tab bar and composer come back |
 | **Top-right corner** | X Reels pill |
 | **Bottom-right corner** | Grok and chat buttons |
 | **Tray menu** | A switch per piece, the width cycle, and *Show everything again* |
 
-To rebind the shortcut, change `HOTKEY` near the bottom of the script to any
-`KeyboardEvent.code` — `'KeyZ'`, `'Backquote'`, and so on. Not `KeyX`: X Reels already binds
-`Alt+X`.
+To rebind either shortcut, change `HOTKEY_ALL` / `HOTKEY_WIDTH` near the bottom of the script
+to any `KeyboardEvent.code` — `'KeyZ'`, `'Backquote'`, and so on. Not `KeyX`: X Reels already
+binds `Alt+X`.
 
 ### What can be toggled
 

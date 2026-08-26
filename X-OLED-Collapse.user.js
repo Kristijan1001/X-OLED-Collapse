@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         X OLED Collapse
 // @namespace    x-oled-collapse
-// @version      1.10.1
+// @version      1.11.0
 // @description  Collapse X/Twitter's chrome for OLED: left nav, right column, tab bar, composer and the floating corner buttons all fold away to pure black. Centred, widenable timeline, hover any edge to peek a panel back.
 // @author       Kristijan1001
 // @icon         data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij4gPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMwMDAiLz4gPHJlY3QgeD0iMC43NSIgeT0iMC43NSIgd2lkdGg9IjYyLjUiIGhlaWdodD0iNjIuNSIgcng9IjEzLjI1IiBmaWxsPSJub25lIiBzdHJva2U9IiMxYjFiMWIiIHN0cm9rZS13aWR0aD0iMS41Ii8+IDxyZWN0IHg9IjI1IiB5PSIxMyIgd2lkdGg9IjE0IiBoZWlnaHQ9IjM4IiByeD0iMyIgZmlsbD0iI2Y1ZjVmNSIvPiA8cGF0aCBkPSJNMTEgMjMgTDE5IDMyIEwxMSA0MSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWQ5YmYwIiBzdHJva2Utd2lkdGg9IjQuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+IDxwYXRoIGQ9Ik01MyAyMyBMNDUgMzIgTDUzIDQxIiBmaWxsPSJub25lIiBzdHJva2U9IiMxZDliZjAiIHN0cm9rZS13aWR0aD0iNC41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4gPC9zdmc+
@@ -622,26 +622,28 @@
         flash(hidden ? 'everything hidden' : 'everything shown');
     }
 
-    // Alt + HOTKEY flips the lot. Change HOTKEY to any KeyboardEvent.code
-    // ('KeyQ', 'KeyZ', 'Backquote', ...) if this one is taken too.
-    // Not KeyX -- X Reels already binds that.
-    const HOTKEY = 'KeyQ';
+    // Alt + these. Change them to any KeyboardEvent.code ('KeyZ',
+    // 'Backquote', ...) if one is taken. Not KeyX -- X Reels binds that.
+    const HOTKEY_ALL = 'KeyQ';     // hide everything / show everything
+    const HOTKEY_WIDTH = 'KeyW';   // step the timeline width
 
     addEventListener('keydown', (e) => {
         if (!e.altKey || e.ctrlKey || e.metaKey) return;
-        if (e.code !== HOTKEY) return;
+        if (e.code !== HOTKEY_ALL && e.code !== HOTKEY_WIDTH) return;
         const t = e.target;
         if (t && (t.isContentEditable || /^(INPUT|TEXTAREA)$/.test(t.tagName))) return;
         e.preventDefault();
         e.stopPropagation();
-        setPanels(!PANELS.every(k => state[k]));
+
+        if (e.code === HOTKEY_WIDTH) cycleWidth();
+        else setPanels(!PANELS.every(k => state[k]));
     }, true);
 
     if (typeof GM_registerMenuCommand === 'function') {
         for (const k of Object.keys(LABELS)) {
             GM_registerMenuCommand('Toggle ' + LABELS[k], () => toggle(k));
         }
-        GM_registerMenuCommand('Timeline width: cycle ' + WIDTHS.join(' / '), cycleWidth);
+        GM_registerMenuCommand('Timeline width  (Alt+W):  ' + WIDTHS.join(' / '), cycleWidth);
         GM_registerMenuCommand('Show everything again  (Alt+Q)', () => setPanels(false));
         GM_registerMenuCommand('Hide everything  (Alt+Q)', () => setPanels(true));
     }
